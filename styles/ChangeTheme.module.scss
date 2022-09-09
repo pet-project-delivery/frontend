@@ -1,0 +1,53 @@
+@import '../styles/variables.scss';
+
+.button {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: $transition;
+
+  svg path {
+    transition: $transition;
+  }
+}
+
+body[data-theme='light'] {
+  .button {
+    svg path {
+      fill: $light-accent;
+    }
+
+    background: $light-block-bg;
+
+    &:hover {
+      background: $accent-light;
+
+      svg path {
+        fill: $light-block-bg;
+      }
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .button {
+    svg path {
+      fill: $dark-accent;
+    }
+
+    background: $dark-block-bg-dark;
+
+    &:hover {
+      background: $accent-light;
+
+      svg path {
+        fill: $dark-block-bg;
+      }
+    }
+  }
+}
