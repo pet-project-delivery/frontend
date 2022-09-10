@@ -1,0 +1,135 @@
+@import "../styles/variables.scss";
+
+.button {
+  width: 200px;
+  height: 50px;
+  padding: 5px 27px 5px 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $light-accent;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  gap: 10px;
+}
+body[data-theme="light"] {
+  .button {
+    background: $light-block-bg;
+  }
+  .cart,
+  .login {
+    background: $light-block-bg;
+  }
+}
+
+body[data-theme="dark"] {
+  .cart,
+  .login {
+    background: $dark-block-bg-dark;
+  }
+
+  .button {
+    background: $dark-block-bg-dark;
+  }
+
+  .header {
+    background-color: $dark-accent-bg;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Ubuntu";
+  font-style: normal;
+  padding: 0 20px 0 20px;
+  height: 80px;
+  color: #fff;
+}
+
+.header {
+  background-color: #6f3195;
+}
+
+.address {
+  align-items: center;
+  width: 250px;
+  display: flex;
+  gap: 10px;
+  &__title {
+    margin-top: -4px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.login {
+  width: 108px;
+}
+
+.cart {
+  width: 125px;
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.login,
+.cart {
+  svg {
+    margin-top: -2px;
+  }
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  color: $light-accent;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    content: "";
+    background-color: #fff;
+    width: 0px;
+
+    height: 2px;
+    transition: $transition;
+  }
+  position: relative;
+
+  &:hover::after {
+    width: 100%;
+  }
+}
