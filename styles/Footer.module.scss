@@ -1,0 +1,120 @@
+@import "../styles/variables.scss";
+
+.footer {
+  background-color: $light-accent-bg;
+  color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  padding: 5px 27px 5px 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $light-accent;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  gap: 10px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+body[data-theme="light"] {
+  .button,
+  .reverse {
+    background: $light-block-bg;
+
+    &:hover {
+      background-color: $accent-light;
+    }
+  }
+}
+body[data-theme="dark"] {
+  .button,
+  .reverse {
+    background: $dark-block-bg-dark;
+  }
+  .footer {
+    background-color: $dark-accent-bg;
+  }
+}
+.reversed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.reverse {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: $light-accent;
+  border: none;
+  width: 167px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+
+  svg path {
+    fill: $light-accent;
+  }
+
+  &:hover {
+    color: white;
+
+    svg path {
+      fill: white;
+    }
+  }
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  width: 170px;
+  height: 54px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

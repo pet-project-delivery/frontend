@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import PasswordTextField from "./PasswordTextField";
 import TextField from "./TextField";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,11 @@ type Registration = {
   passwordConfirmation: string;
 };
 
-const AuthForm = () => {
+interface AuthFormProps {
+  setOpen: () => void;
+}
+
+const AuthForm: FC<AuthFormProps> = ({ setOpen }) => {
   const {
     register,
     handleSubmit,
@@ -21,6 +25,7 @@ const AuthForm = () => {
 
   const onSubmit = (data: {}) => {
     axios.post("http://localhost:5000/user", data);
+    setOpen();
   };
   return (
     <div>
