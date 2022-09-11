@@ -2,10 +2,12 @@ import { NextComponentType } from "next";
 import Link from "next/link";
 import React, { FC, ReactElement, useState } from "react";
 import ChangeTheme from "./ChangeTheme";
+import avatar from "../public/Rectangle 3.png";
 
 import styles from "../styles/Header.module.scss";
 import Modal from "./Modal";
 import LoginPopup from "./LoginPopup";
+import Image from "next/image";
 
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +22,10 @@ const Header: FC = () => {
         <div className="container">
           <div className={styles.wrapper}>
             <div className={styles.flex}>
-              <button className={styles.button}>Delivery</button>
+              <button className={styles.button}>
+                <Image src={avatar} width={40} height={40} alt="avatar" />
+                Delivery
+              </button>
               <div className={styles.address}>
                 <svg
                   width="28"
@@ -88,7 +93,7 @@ const Header: FC = () => {
         </div>
       </header>
       <Modal isOpen={isOpen} setOpen={clickHandler}>
-        <LoginPopup />
+        <LoginPopup setOpen={clickHandler} />
       </Modal>
     </>
   );

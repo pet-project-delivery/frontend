@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import PasswordTextField from "./PasswordTextField";
 import TextField from "./TextField";
 import { useForm } from "react-hook-form";
@@ -6,19 +6,30 @@ import { useForm } from "react-hook-form";
 import styles from "../styles/LoginForm.module.scss";
 import axios from "axios";
 
+interface LoginFormProps {
+  setOpen: () => void;
+}
+
 type LoginData = {
   email: string;
   password: string;
 };
-const LoginForm = () => {
+const LoginForm: FC<LoginFormProps> = ({ setOpen }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<LoginData>();
 
   const onSubmit = (data: {}) => {
-    alert(JSON.stringify(data));
+    axios.post("http://localhost:5000/user/login", data).then((res) => {
+      if (res.data) {
+        setOpen();
+      } else {
+        setError("email", { message: "Неверный логин или пароль" });
+      }
+    });
   };
 
   return (
