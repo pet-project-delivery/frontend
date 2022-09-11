@@ -15,10 +15,18 @@
   border: none;
   cursor: pointer;
   gap: 10px;
+
+  &:hover {
+    color: white;
+  }
 }
 body[data-theme="light"] {
   .button {
     background: $light-block-bg;
+
+    &:hover {
+      background-color: $accent-light;
+    }
   }
   .cart,
   .login {
@@ -47,13 +55,12 @@ body[data-theme="dark"] {
   align-items: center;
   font-family: "Ubuntu";
   font-style: normal;
-  padding: 0 20px 0 20px;
   height: 80px;
   color: #fff;
 }
 
 .header {
-  background-color: #6f3195;
+  background-color: $light-accent-bg;
 }
 
 .address {
