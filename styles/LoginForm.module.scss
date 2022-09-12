@@ -1,15 +1,43 @@
+@import '../styles/variables.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 .button {
   border: none;
-  color: #fff;
+  display: block;
   border-radius: 8px;
-  width: 200px;
   height: 40px;
-  background-color: #813cab;
-  margin-left: 70px;
+  width: 200px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  &:hover {
-    background-color: #6f3195;
+  color: $white;
+  cursor: pointer;
+  transition: $transition;
+}
+
+body[data-theme='light'] {
+  .button {
+    background: $light-accent;
+
+    &:hover {
+      background: $light-accent-bg;
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .button {
+    background: $dark-accent;
+
+    &:hover {
+      background: $dark-accent-bg;
+    }
   }
 }

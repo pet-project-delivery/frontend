@@ -22,13 +22,13 @@ body[data-theme='light'] {
       fill: $light-accent;
     }
 
-    background: $light-block-bg;
+    background: $white;
 
     &:hover {
       background: $accent-light;
 
       svg path {
-        fill: $light-block-bg;
+        fill: $white;
       }
     }
   }
