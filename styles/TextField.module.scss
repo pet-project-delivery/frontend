@@ -1,22 +1,22 @@
+@import '../styles/variables.scss';
+
 .input {
   outline: none;
-  border: 1px solid #bcbcbc;
+  border: 1px solid $gray;
   width: 340px;
   height: 40px;
   padding: 11px 15px;
   border-radius: 8px;
-  color: #813cab;
-  margin-bottom: 20px;
-
-  &:focus {
-    border-color: #813cab;
-  }
+  background: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
 
   &::placeholder {
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
-    color: #bcbcbc;
+    color: $gray;
   }
 }
 
@@ -25,5 +25,25 @@
   font-size: 16px;
   line-height: 18px;
   color: #9a6db6;
-  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+body[data-theme='light'] {
+  .input {
+    color: $light-accent;
+
+    &:focus {
+      border-color: $light-accent;
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .input {
+    color: $dark-accent;
+
+    &:focus {
+      border-color: $dark-accent;
+    }
+  }
 }

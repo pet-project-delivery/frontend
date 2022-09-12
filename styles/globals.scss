@@ -1,15 +1,23 @@
-@import "../styles/variables.scss";
+@import '../styles/variables.scss';
 
 html,
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 button,
 input,
 *::placeholder {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-style: normal;
+}
+
+main {
+  min-height: calc(100vh - 198px);
+}
+
+svg path {
+  transition: $transition;
 }
 
 .container {
@@ -30,7 +38,7 @@ a {
   padding: 0;
 }
 
-body[data-theme="light"] {
+body[data-theme='light'] {
   background: $light-main-bg;
 
   h1 {
@@ -38,7 +46,7 @@ body[data-theme="light"] {
   }
 }
 
-body[data-theme="dark"] {
+body[data-theme='dark'] {
   background: $dark-main-bg;
 
   h1 {

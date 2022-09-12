@@ -1,0 +1,40 @@
+@import '../styles/variables.scss';
+
+.logo {
+  width: 200px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: $transition;
+}
+
+body[data-theme='light'] {
+  .logo {
+    background: $white;
+    color: $light-accent;
+
+    &:hover {
+      background: $accent-light;
+      color: $white;
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .logo {
+    background: $dark-block-bg-dark;
+    color: $dark-accent;
+
+    &:hover {
+      background: $accent-light;
+      color: $dark-block-bg;
+    }
+  }
+}

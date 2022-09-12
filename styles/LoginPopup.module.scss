@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import './variables.scss';
 
 .popup {
   width: 340px;
@@ -22,13 +22,43 @@
   height: 40px;
   padding: 11px 20px;
   border-radius: 8px;
-  color: #fff;
-  background-color: $accent-light;
-  &.active {
-    background-color: $light-accent;
+  cursor: pointer;
+  transition: $transition;
+}
+
+body[data-theme='light'] {
+  .button {
+    background: $accent-light;
+    color: $white;
+
+    &:hover {
+      background-color: $light-accent;
+    }
+  }
+  .active {
+    background-color: $light-accent-bg;
+
+    &:hover {
+      background-color: $light-accent-bg;
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .button {
+    background: $accent-light;
+    color: $white;
+
+    &:hover {
+      background-color: $dark-accent;
+    }
   }
 
-  &:hover {
-    background-color: #6f3195;
+  .active {
+    background-color: $dark-accent-bg;
+
+    &:hover {
+      background-color: $dark-accent-bg;
+    }
   }
 }

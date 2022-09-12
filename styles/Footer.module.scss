@@ -1,4 +1,4 @@
-@import "../styles/variables.scss";
+@import '../styles/variables.scss';
 
 .footer {
   background-color: $light-accent-bg;
@@ -18,46 +18,6 @@
   line-height: 18px;
 }
 
-.button {
-  width: 200px;
-  height: 50px;
-  padding: 5px 27px 5px 10px;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $light-accent;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  gap: 10px;
-
-  &:hover {
-    color: white;
-  }
-}
-
-body[data-theme="light"] {
-  .button,
-  .reverse {
-    background: $light-block-bg;
-
-    &:hover {
-      background-color: $accent-light;
-    }
-  }
-}
-body[data-theme="dark"] {
-  .button,
-  .reverse {
-    background: $dark-block-bg-dark;
-  }
-  .footer {
-    background-color: $dark-accent-bg;
-  }
-}
 .reversed {
   display: flex;
   flex-direction: column;
@@ -80,10 +40,8 @@ body[data-theme="dark"] {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-
-  svg path {
-    fill: $light-accent;
-  }
+  cursor: pointer;
+  transition: $transition;
 
   &:hover {
     color: white;
@@ -92,12 +50,6 @@ body[data-theme="dark"] {
       fill: white;
     }
   }
-}
-
-.help {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .p {
@@ -113,8 +65,49 @@ body[data-theme="dark"] {
   flex-direction: column;
   gap: 10px;
 }
+
 .links {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: $transition;
+
+  &:hover {
+    color: $gray;
+  }
+}
+
+body[data-theme='light'] {
+  .reverse {
+    background: $white;
+
+    &:hover {
+      background-color: $accent-light;
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .reverse {
+    background: $dark-block-bg-dark;
+
+    &:hover {
+      background: $accent-light;
+      color: $dark-block-bg;
+
+      svg path {
+        fill: $dark-block-bg;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $dark-accent-bg;
+  }
 }

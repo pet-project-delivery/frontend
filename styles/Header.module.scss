@@ -1,59 +1,10 @@
-@import "../styles/variables.scss";
-
-.button {
-  width: 200px;
-  height: 50px;
-  padding: 5px 27px 5px 10px;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $light-accent;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  gap: 10px;
-
-  &:hover {
-    color: white;
-  }
-}
-body[data-theme="light"] {
-  .button {
-    background: $light-block-bg;
-
-    &:hover {
-      background-color: $accent-light;
-    }
-  }
-  .cart,
-  .login {
-    background: $light-block-bg;
-  }
-}
-
-body[data-theme="dark"] {
-  .cart,
-  .login {
-    background: $dark-block-bg-dark;
-  }
-
-  .button {
-    background: $dark-block-bg-dark;
-  }
-
-  .header {
-    background-color: $dark-accent-bg;
-  }
-}
+@import '../styles/variables.scss';
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-style: normal;
   height: 80px;
   color: #fff;
@@ -64,16 +15,25 @@ body[data-theme="dark"] {
 }
 
 .address {
-  align-items: center;
-  width: 250px;
   display: flex;
+  align-items: center;
   gap: 10px;
-  &__title {
-    margin-top: -4px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    color: $gray-light;
+
+    svg path {
+      fill: $gray-light;
+    }
   }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .links {
@@ -84,37 +44,27 @@ body[data-theme="dark"] {
   line-height: 18px;
 }
 
-.login {
-  width: 108px;
-}
-
-.cart {
-  width: 125px;
-}
-
 .buttons {
   align-items: center;
   display: flex;
   gap: 20px;
 }
 
-.login,
-.cart {
-  svg {
-    margin-top: -2px;
-  }
+.button {
+  width: auto;
+  height: 40px;
+  padding: 10px 15px;
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
   cursor: pointer;
   color: $light-accent;
   border: none;
-  height: 40px;
   border-radius: 10px;
-  padding: 10px 15px 10px 15px;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
+  transition: $transition;
 }
 
 .flex {
@@ -127,7 +77,7 @@ body[data-theme="dark"] {
     position: absolute;
     left: 0;
     bottom: -3px;
-    content: "";
+    content: '';
     background-color: #fff;
     width: 0px;
 
@@ -138,5 +88,39 @@ body[data-theme="dark"] {
 
   &:hover::after {
     width: 100%;
+  }
+}
+
+body[data-theme='light'] {
+  .button {
+    background: $white;
+
+    &:hover {
+      background-color: $accent-light;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  .button {
+    background: $dark-block-bg-dark;
+
+    &:hover {
+      background-color: $accent-light;
+      color: $dark-block-bg;
+
+      svg path {
+        fill: $dark-block-bg;
+      }
+    }
+  }
+
+  .header {
+    background-color: $dark-accent-bg;
   }
 }
