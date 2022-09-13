@@ -45,7 +45,6 @@ export function ThemeProvider(props: ThemeProps): ReactElement {
 
   function toggleThemeHandler(): void {
     const item = window.localStorage.getItem('theme');
-    console.log(item);
     if (item !== null) {
       if (item === 'light') {
         setTheme('dark');
