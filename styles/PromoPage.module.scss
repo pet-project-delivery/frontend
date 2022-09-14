@@ -1,0 +1,28 @@
+@import "../styles/variables.scss";
+
+.h1 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34px;
+  color: $light-accent;
+  margin-bottom: 30px;
+}
+
+.h2 {
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: $light-accent;
+}
+
+.restaurants {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.promos {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
