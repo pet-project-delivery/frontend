@@ -1,23 +1,23 @@
-import { FC, useCallback } from 'react';
-import { Restaurant } from '../types/Restaurant';
-
-import styles from '../styles/Restaurant.module.scss';
+import { FC } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { getRating } from '../helpers/getRating';
 import { getMinPrice } from '../helpers/getMinPrice';
-import Link from 'next/link';
+import { Restaurant } from '../types/Restaurant';
+
+import styles from '../styles/RestaurantCard.module.scss';
 
 interface RestaurantCardProps {
   restaurant: Restaurant;
 }
 
 const RestaurantCard: FC<RestaurantCardProps> = ({ restaurant }) => {
-  const { name, imageUrl, timeRange, reviews, reviewsAmount, items } = restaurant;
+  const { _id, name, imageUrl, timeRange, reviews, reviewsAmount, items } = restaurant;
   const rating = getRating(reviews, reviewsAmount);
   const minPrice = getMinPrice(items);
 
   return (
-    <Link href="/">
+    <Link href={`/restaurants/${_id}`}>
       <a className={styles.card}>
         <Image
           className={styles.image}
