@@ -1,5 +1,10 @@
 .restaurants {
   display: flex;
   gap: 20px 40px;
+}
+ 
+.promos {
+  display: flex;
+  gap: 40px;
   flex-wrap: wrap;
 }

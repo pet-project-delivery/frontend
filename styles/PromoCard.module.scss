@@ -1,0 +1,52 @@
+@import "../styles/variables.scss";
+
+body[data-theme="light"] {
+  .promocode {
+    background-color: #fff;
+  }
+}
+
+body[data-theme="dark"] {
+  .promocode {
+    background-color: $dark-block-bg-dark;
+  }
+}
+
+.card {
+  position: relative;
+  margin-top: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    position: absolute;
+    left: 30px;
+    top: 59px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    width: 144px;
+    color: #fff;
+  }
+
+  .promocode {
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: $light-accent;
+    max-width: 93px;
+    width: auto;
+    height: 30px;
+    padding: 7px 10px;
+    border-radius: 8px;
+  }
+
+  .image {
+    position: absolute;
+  }
+}
