@@ -1,16 +1,4 @@
-@import "../styles/variables.scss";
-
-body[data-theme="light"] {
-  .promocode {
-    background-color: #fff;
-  }
-}
-
-body[data-theme="dark"] {
-  .promocode {
-    background-color: $dark-block-bg-dark;
-  }
-}
+@import '../styles/variables.scss';
 
 .card {
   position: relative;
@@ -28,7 +16,7 @@ body[data-theme="dark"] {
     font-size: 18px;
     line-height: 21px;
     width: 144px;
-    color: #fff;
+    color: $white;
   }
 
   .promocode {
@@ -48,5 +36,17 @@ body[data-theme="dark"] {
 
   .image {
     position: absolute;
+  }
+}
+
+body[data-theme='light'] {
+  .promocode {
+    background-color: $light-block-bg;
+  }
+}
+
+body[data-theme='dark'] {
+  .promocode {
+    background-color: $dark-block-bg-dark;
   }
 }
