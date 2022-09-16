@@ -1,0 +1,80 @@
+@import '../styles/variables.scss';
+
+.card {
+  width: 440px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.image {
+  width: 440px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.wrapper {
+  padding: 15px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.descItem {
+  height: 30px;
+  min-width: 60px;
+  width: auto;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+}
+
+body[data-theme='light'] {
+  .card {
+    background: $light-block-bg;
+  }
+
+  .title {
+    color: $light-accent;
+  }
+
+  .descItem {
+    background: $light-accent;
+  }
+}
+
+body[data-theme='dark'] {
+  .card {
+    background: $dark-block-bg;
+  }
+
+  .title {
+    color: $dark-accent;
+  }
+
+  .descItem {
+    background: $dark-accent;
+  }
+}

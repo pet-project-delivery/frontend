@@ -1,11 +1,35 @@
 @import '../styles/variables.scss';
 
-.card {
-  width: 440px;
-  border-radius: 12px;
-  overflow: hidden;
+.top {
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.infoItem {
+  height: 40px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
   transition: $transition;
 
   &:hover {
@@ -13,68 +37,91 @@
   }
 }
 
-.image {
-  width: 440px;
-  height: 150px;
-  object-fit: cover;
+.like {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+
+  &:hover svg path {
+    fill: $accent-light;
+  }
 }
 
-.wrapper {
-  padding: 15px;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  margin-bottom: 10px;
-}
-
-.desc {
+.categories {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-.descItem {
-  height: 30px;
-  min-width: 60px;
-  width: auto;
-  padding: 5px 10px;
+.category {
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
   display: flex;
   align-items: center;
-  gap: 5px;
-  border-radius: 12px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: $white;
+  justify-content: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: $transition;
 }
 
 body[data-theme='light'] {
-  .card {
+  .infoItem {
+    color: $light-accent;
     background: $light-block-bg;
   }
 
-  .title {
-    color: $light-accent;
+  .like {
+    background: $light-block-bg;
   }
 
-  .descItem {
-    background: $light-accent;
+  .category {
+    color: $black;
+    background: $light-block-bg;
+
+    &:hover {
+      background: $accent-light;
+      color: $white;
+    }
+
+    &.active {
+      background: $light-accent;
+      color: $white;
+    }
   }
 }
 
 body[data-theme='dark'] {
-  .card {
+  .infoItem {
+    color: $dark-accent;
     background: $dark-block-bg;
   }
 
-  .title {
-    color: $dark-accent;
+  .like {
+    background: $dark-block-bg;
   }
 
-  .descItem {
-    background: $dark-accent;
+  .category {
+    color: $gray;
+    background: $dark-block-bg;
+
+    &:hover {
+      background: $accent-light;
+      color: $white;
+    }
+
+    &.active {
+      background: $dark-accent;
+      color: $white;
+    }
   }
 }
