@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
-import PasswordTextField from './PasswordTextField';
-import TextField from './TextField';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import React, { FC } from "react";
+import PasswordTextField from "./PasswordTextField";
+import TextField from "./TextField";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
-import styles from '../styles/LoginForm.module.scss';
+import styles from "../styles/LoginForm.module.scss";
 
 type Registration = {
   email: string;
@@ -21,10 +21,10 @@ const AuthForm: FC<AuthFormProps> = ({ setOpen }) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Registration>({ reValidateMode: 'onSubmit' });
+  } = useForm<Registration>({ reValidateMode: "onSubmit" });
 
   const onSubmit = (data: {}) => {
-    axios.post('http://localhost:5000/user', data);
+    axios.post("http://localhost:5000/users", data);
     setOpen();
   };
   return (
@@ -32,8 +32,8 @@ const AuthForm: FC<AuthFormProps> = ({ setOpen }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <TextField
           register={{
-            ...register('email', {
-              required: 'Введите email',
+            ...register("email", {
+              required: "Введите email",
             }),
           }}
           placeholder="Email..."
@@ -42,8 +42,8 @@ const AuthForm: FC<AuthFormProps> = ({ setOpen }) => {
         />
         <PasswordTextField
           register={{
-            ...register('password', {
-              required: 'Введите пароль',
+            ...register("password", {
+              required: "Введите пароль",
             }),
           }}
           placeholder="Пароль..."
@@ -51,8 +51,8 @@ const AuthForm: FC<AuthFormProps> = ({ setOpen }) => {
         />
         <PasswordTextField
           register={{
-            ...register('password', {
-              required: 'Повторите пароль',
+            ...register("password", {
+              required: "Повторите пароль",
             }),
           }}
           placeholder="Повторите пароль..."

@@ -2,6 +2,8 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "../components/ThemeProvider";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </ThemeProvider>
     </>
   );

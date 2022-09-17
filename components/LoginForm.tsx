@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
-import PasswordTextField from './PasswordTextField';
-import TextField from './TextField';
-import { useForm } from 'react-hook-form';
+import React, { FC } from "react";
+import PasswordTextField from "./PasswordTextField";
+import TextField from "./TextField";
+import { useForm } from "react-hook-form";
 
-import styles from '../styles/LoginForm.module.scss';
-import axios from 'axios';
+import styles from "../styles/LoginForm.module.scss";
+import axios from "axios";
+import { useAppDispatch } from "../store/hooks/redux";
+import { login } from "../store/slices/userSlice";
 
 interface LoginFormProps {
   setOpen: () => void;
@@ -22,12 +24,15 @@ const LoginForm: FC<LoginFormProps> = ({ setOpen }) => {
     setError,
   } = useForm<LoginData>();
 
+  const dispatch = useAppDispatch();
+
   const onSubmit = (data: {}) => {
-    axios.post('http://localhost:5000/user/login', data).then((res) => {
+    axios.post("http://localhost:5000/users/login", data).then((res) => {
       if (res.data) {
         setOpen();
+        dispatch(login(res.data));
       } else {
-        setError('email', { message: 'Неверный логин или пароль' });
+        setError("email", { message: "Неверный логин или пароль" });
       }
     });
   };
@@ -36,8 +41,8 @@ const LoginForm: FC<LoginFormProps> = ({ setOpen }) => {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <TextField
         register={{
-          ...register('email', {
-            required: 'Введите email',
+          ...register("email", {
+            required: "Введите email",
           }),
         }}
         placeholder="Email..."
@@ -46,8 +51,8 @@ const LoginForm: FC<LoginFormProps> = ({ setOpen }) => {
       />
       <PasswordTextField
         register={{
-          ...register('password', {
-            required: 'Введите пароль',
+          ...register("password", {
+            required: "Введите пароль",
           }),
         }}
         placeholder="Пароль..."

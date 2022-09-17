@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import "../styles/variables.scss";
 
 .top {
   margin-bottom: 20px;
@@ -50,6 +50,10 @@
   &:hover svg path {
     fill: $accent-light;
   }
+
+  &.activeLike svg path {
+    fill: $accent-light;
+  }
 }
 
 .categories {
@@ -82,7 +86,7 @@
   flex-wrap: wrap;
 }
 
-body[data-theme='light'] {
+body[data-theme="light"] {
   .infoItem {
     color: $light-accent;
     background: $light-block-bg;
@@ -108,7 +112,7 @@ body[data-theme='light'] {
   }
 }
 
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   .infoItem {
     color: $dark-accent;
     background: $dark-block-bg;
