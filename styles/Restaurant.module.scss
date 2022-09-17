@@ -53,6 +53,7 @@
 }
 
 .categories {
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -72,6 +73,13 @@
   text-transform: capitalize;
   cursor: pointer;
   transition: $transition;
+}
+
+.products {
+  display: flex;
+  align-items: center;
+  gap: 20px 38px;
+  flex-wrap: wrap;
 }
 
 body[data-theme='light'] {
