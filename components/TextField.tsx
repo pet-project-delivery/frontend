@@ -1,10 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { ChangeEventHandler, FC, useState } from "react";
 import styles from "../styles/TextField.module.scss";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 interface TextFiledProps {
   value?: string;
-  onChange?: (text: string) => void;
+  onChange?: (value: string) => void;
   onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined;
   placeholder: string;
   register?: UseFormRegisterReturn<"email" | "name">;
@@ -23,15 +23,28 @@ const TextField: FC<TextFiledProps> = ({
 }) => {
   return (
     <>
-      {errorMessage && <div className={styles.error}>{errorMessage}</div>}
-      <input
-        value={value}
-        placeholder={placeholder}
-        {...register}
-        type={type}
-        autoComplete="off"
-        className={styles.input}
-      />
+      {onChange ? (
+        <input
+          value={value}
+          placeholder={placeholder}
+          type={type}
+          autoComplete="off"
+          className={styles.input}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      ) : (
+        <>
+          {errorMessage && <div className={styles.error}>{errorMessage}</div>}
+          <input
+            value={value}
+            placeholder={placeholder}
+            {...register}
+            type={type}
+            autoComplete="off"
+            className={styles.input}
+          />
+        </>
+      )}
     </>
   );
 };
